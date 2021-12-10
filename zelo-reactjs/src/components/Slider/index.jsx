@@ -11,7 +11,7 @@ function Slider() {
     return (
 
         <Carousel autoplay dots={false}>
-            {features.map((ele, index) => (
+            {/* {features.map((ele, index) => (
 
                 <SliderItem
                     key={index}
@@ -20,7 +20,7 @@ function Slider() {
                     detail={ele.descrpition}
                 />
 
-            ))}
+            ))} */}
         </Carousel>
     );
 }

@@ -58,10 +58,26 @@ function RegistryPage(props) {
         if (isSubmit) {
             handleConfirmAccount(username, otpValue);
         } else {
+            // await loginApi
+            //     .fetchUser(username)
+            //     .then((value) => {
+            //         message.error('Email hoặc số điện thoại đã được đăng ký');
+            //     })
+            //     .catch(async () => {
+            //         try {
+            //             await loginApi.registry(name, username, password);
+            //             setIsSubmit(true);
+            //             openNotification();
+            //             setCounter(RESEND_OTP_TIME_LIMIT);
+            //             startResendOTPTimer();
+            //         } catch (error) {
+            //             message.error('Đã có lỗi xảy ra');
+            //         }
+            //     });
             await loginApi
-                .fetchUser(username)
+                .registry(name, username, password)
                 .then((value) => {
-                    message.error('Email hoặc số điện thoại đã được đăng ký');
+                    message.info('Đăng ký thành công');
                 })
                 .catch(async () => {
                     try {

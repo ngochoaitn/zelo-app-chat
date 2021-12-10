@@ -31,12 +31,12 @@ const homeSlice = createSlice({
             const data = action.payload;
             state.infoWebApps = data.find(
                 (ele) => ele.name === 'infoweb'
-            ).value;
+            )?.value || {};
             state.developers = data.find(
                 (ele) => ele.name === 'developers'
-            ).value;
-            state.infoApp = data.find((ele) => ele.name === 'infoapp').value;
-            state.features = data.find((ele) => ele.name === 'features').value;
+            )?.value || {};
+            state.infoApp = data.find((ele) => ele.name === 'infoapp')?.value || {};
+            state.features = data.find((ele) => ele.name === 'features')?.value || {};
             state.isLoading = false;
         },
 

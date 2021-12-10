@@ -22,10 +22,10 @@ LoginPage.propTypes = {};
 function LoginPage(props) {
     const dispatch = useDispatch();
     const [isError, setError] = useState(false);
-    const [isVerify, setVerify] = useState(false);
+    // const [isVerify, setVerify] = useState(false);
     const [keyGoogleCaptcha, setKeyGoogleCaptcha] = useState(null);
     const history = useHistory();
-
+    const isVerify=true;
     const handleSubmit = async (values) => {
         const { username, password } = values;
         console.log(isVerify);

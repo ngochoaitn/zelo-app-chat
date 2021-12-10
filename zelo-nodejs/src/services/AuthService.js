@@ -77,7 +77,8 @@ class AuthService {
         const saveUser = await newUser.save();
 
         const { _id, username } = saveUser;
-        this.sendOTP(_id, username);
+        await User.updateOne({ username }, { isActived: true });
+        // this.sendOTP(_id, username);
     }
 
     async confirmAccount(username, otpPhone) {
@@ -171,6 +172,7 @@ class AuthService {
     }
 
     checkOTP(sendOTP, dbOTP, otpTime) {
+        return true;
         if (!dbOTP) throw new MyError('OTP không hợp lệ');
 
         // check hết hạn otp
